@@ -43,14 +43,13 @@ include(__DIR__ . '/../Config/config.php');
         .lenis.lenis-stopped { overflow: hidden; }
 
          @media (pointer: coarse) {
-            #candle-cursor {
+            #cursor-dot {
+                display: none !important;
+            }
+            #cursor-ring {
                 display: none !important;
             }
 
-            body {
-                cursor: auto !important;
-                touch-action: none;
-            }
         }
     </style>
 </head>
