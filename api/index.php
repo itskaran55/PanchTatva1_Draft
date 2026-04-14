@@ -41,6 +41,17 @@ include(__DIR__ . '/../Config/config.php');
         .lenis.lenis-smooth { scroll-behavior: auto; }
         .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
         .lenis.lenis-stopped { overflow: hidden; }
+
+         @media (pointer: coarse) {
+            #candle-cursor {
+                display: none !important;
+            }
+
+            body {
+                cursor: auto !important;
+                touch-action: none;
+            }
+        }
     </style>
 </head>
 <body>

@@ -13,7 +13,7 @@
             <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-8" data-aos="fade-up" data-aos-delay="100">
                 Driven by the <span class="italic font-light opacity-80">Five Elements</span>
             </h2>
-            <p class="text-gray-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed font-light" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-gray-500 text-sm md:text-base max-w-xl mx-auto leading-relaxed font-light sm-font-bold md-font-bold" data-aos="fade-up" data-aos-delay="200">
                 At PanchTatva, we believe every successful brand is built on five core elements. We bring these together to create digital experiences that are result-driven.
             </p>
         </div>

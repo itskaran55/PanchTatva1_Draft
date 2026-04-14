@@ -1,12 +1,8 @@
-<header id="main-header" class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-6">
+<header id="main-header" class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-4 md:py-6">
     <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
         
         <a href="index.php" class="relative z-[110] flex items-center gap-3 group">
-            <img src="<?php echo BASE_URL; ?>Logo/Panch-Tatva-Final-Logo.png" alt="Panch Tatva Logo" class="h-12 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110">
-            <!-- <div class="flex flex-col leading-none">
-                <span class="text-white font-black tracking-tighter text-lg md:text-xl uppercase">Panch <span class="text-[#D4A017]">Tatva</span></span>
-                <span class="text-[8px] tracking-[0.4em] text-gray-500 uppercase">Collective</span>
-            </div> -->
+            <img src="<?php echo BASE_URL; ?>Logo/Panch-Tatva-Final-Logo.png" alt="Panch Tatva Logo" class="h-10 md:h-12 w-auto transition-transform duration-500 group-hover:scale-110">
         </a>
 
         <nav class="hidden lg:flex items-center space-x-12">
@@ -28,22 +24,27 @@
             </a>
         </div>
 
-        <button id="menu-toggle" class="lg:hidden relative z-[110] w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none">
-            <span class="w-8 h-[2px] bg-white transition-all duration-300" id="line1"></span>
-            <span class="w-8 h-[2px] bg-[#D4A017] transition-all duration-300" id="line2"></span>
+        <button id="menu-toggle" class="lg:hidden relative z-[110] w-10 h-10 flex flex-col justify-center items-center focus:outline-none">
+            <span id="line1" class="w-8 h-[2px] bg-white mb-1.5 transition-all duration-300"></span>
+            <span id="line2" class="w-8 h-[2px] bg-[#D4A017] transition-all duration-300"></span>
         </button>
 
     </div>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-[#03060A] z-[105] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500">
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <h2 class="text-[30vw] font-black text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5">MENU</h2>
+    <div id="mobile-menu" class="fixed inset-0 bg-[#03060A] z-[105] flex flex-col items-center justify-center translate-x-full transition-transform duration-500 ease-in-out">
+        
+        <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-5 flex items-center justify-center">
+            <h2 class="text-[40vw] font-black text-white uppercase tracking-tighter">MENU</h2>
         </div>
-        <nav class="flex flex-col items-center space-y-8 text-center">
-            <a href="#services" class="mobile-link text-4xl font-bold tracking-tighter hover:text-[#D4A017]">SERVICES</a>
-            <a href="#process" class="mobile-link text-4xl font-bold tracking-tighter hover:text-[#D4A017]">PROCESS</a>
-            <a href="#work" class="mobile-link text-4xl font-bold tracking-tighter hover:text-[#D4A017]">OUR WORK</a>
-            <a href="#contact" class="mobile-link text-4xl font-bold tracking-tighter text-[#D4A017]">START PROJECT</a>
+
+        <nav class="relative z-[106] flex flex-col items-center space-y-6 text-center">
+            <a href="#services" class="mobile-link text-3xl md:text-5xl font-bold tracking-tighter text-white hover:text-[#D4A017] transition-colors">SERVICES</a>
+            <a href="#process" class="mobile-link text-3xl md:text-5xl font-bold tracking-tighter text-white hover:text-[#D4A017] transition-colors">PROCESS</a>
+            <a href="#work" class="mobile-link text-3xl md:text-5xl font-bold tracking-tighter text-white hover:text-[#D4A017] transition-colors">OUR WORK</a>
+            <a href="#whyus" class="mobile-link text-3xl md:text-5xl font-bold tracking-tighter text-white hover:text-[#D4A017] transition-colors">WHY US</a>
+            <div class="pt-8">
+                <a href="#contact" class="mobile-link text-xl font-bold tracking-[0.2em] text-[#D4A017] border border-[#D4A017] px-8 py-4 uppercase">START PROJECT</a>
+            </div>
         </nav>
     </div>
 </header>
@@ -55,41 +56,44 @@
     const line1 = document.getElementById('line1');
     const line2 = document.getElementById('line2');
 
-    // Scroll Effect: Header Shrink & Blur
+    // Scroll Logic: High-end Blur Effect
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('bg-[#03060A]/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-white/5');
+        if (window.scrollY > 20) {
+            header.classList.add('bg-[#03060A]/90', 'backdrop-blur-xl', 'py-3', 'border-b', 'border-white/5');
         } else {
-            header.classList.remove('bg-[#03060A]/80', 'backdrop-blur-xl', 'py-4', 'border-b', 'border-white/5');
+            header.classList.remove('bg-[#03060A]/90', 'backdrop-blur-xl', 'py-3', 'border-b', 'border-white/5');
         }
     });
 
     // Mobile Menu Toggle Logic
-    menuToggle.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.contains('opacity-100');
+    let isMenuOpen = false;
+
+    const toggleMenu = () => {
+        isMenuOpen = !isMenuOpen;
         
-        if (!isOpen) {
-            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-            mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-            line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-            line2.style.transform = 'rotate(-45deg) translate(2px, -2px)';
-            document.body.style.overflow = 'hidden'; // Stop scroll
+        if (isMenuOpen) {
+            // Open Menu
+            mobileMenu.classList.remove('translate-x-full');
+            line1.style.transform = 'translateY(4px) rotate(45deg)';
+            line2.style.transform = 'translateY(-4px) rotate(-45deg)';
+            line2.style.backgroundColor = '#FFFFFF'; // Color shift for consistency
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
         } else {
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+            // Close Menu
+            mobileMenu.classList.add('translate-x-full');
             line1.style.transform = 'none';
             line2.style.transform = 'none';
+            line2.style.backgroundColor = '#D4A017';
             document.body.style.overflow = 'auto';
         }
-    });
+    };
 
-    // Close menu on link click
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu on link click (important for mobile UX)
     document.querySelectorAll('.mobile-link').forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-            line1.style.transform = 'none';
-            line2.style.transform = 'none';
-            document.body.style.overflow = 'auto';
+            if(isMenuOpen) toggleMenu();
         });
     });
 </script>
