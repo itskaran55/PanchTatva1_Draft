@@ -1,4 +1,4 @@
-<header id="main-header" class="fixed top-0 left-0 w-full z-[100] transition-all duration-500 py-4 md:py-6">
+<header id="main-header" class="fixed top-0 inset-x-0 left-0 w-full z-[100] transition-all duration-500 py-4 md:py-6">
     <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
         
         <a href="index.php" class="relative z-[110] flex items-center gap-3 group">
@@ -73,18 +73,20 @@
         
         if (isMenuOpen) {
             // Open Menu
-            mobileMenu.classList.remove('translate-x-full');
-            line1.style.transform = 'translateY(4px) rotate(45deg)';
-            line2.style.transform = 'translateY(-4px) rotate(-45deg)';
+            mobileMenu.classList.remove('translate-x-full', 'pointer-events-none');
+           line1.style.transform = 'translateY(1px) rotate(45deg)';
+            line2.style.transform = 'translateY(-1px) rotate(-45deg)';
             line2.style.backgroundColor = '#FFFFFF'; // Color shift for consistency
             document.body.style.overflow = 'hidden'; // Prevent background scroll
+            document.documentElement.style.overflow = 'hidden'; // Prevent Header scroll
         } else {
             // Close Menu
-            mobileMenu.classList.add('translate-x-full');
-            line1.style.transform = 'none';
-            line2.style.transform = 'none';
+            mobileMenu.classList.add('translate-x-full', 'pointer-events-none');
+            line1.style.transform = 'translateY(3px) rotate(0deg)';
+            line2.style.transform = 'translateY(-3px) rotate(0deg)';
             line2.style.backgroundColor = '#D4A017';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
         }
     };
 

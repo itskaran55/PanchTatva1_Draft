@@ -61,17 +61,17 @@
             <div class="space-y-8" data-aos="fade-left" data-aos-delay="300">
                 <h4 class="text-white text-xs font-black tracking-[0.4em] uppercase">Contact</h4>
                 <div class="group">
-                    <p class="text-gray-500 text-xs mb-2 font-light italic">Ready to scale?</p>
+                    <p class="text-gray-500 text-xs mb-2 font-bold italic">Ready to scale?</p>
                     <a href="mailto:hello@panchtatva.com" class="text-white text-lg md:text-xl font-bold tracking-tighter hover:text-[#D4A017] transition-all duration-300">
                         hello@panchtatva.com
                     </a>
                 </div>
-                <div class="pt-4">
+                <!-- <div class="pt-4">
                     <span class="text-[9px] text-gray-600 tracking-[0.3em] uppercase block mb-3">Presence</span>
                     <span class="inline-block px-4 py-2 border border-white/5 bg-white/[0.02] text-white text-[10px] font-bold uppercase tracking-widest rounded-full">
                         Global Digital Collective
                     </span>
-                </div>
+                </div> -->
             </div>
 
         </div>
@@ -80,7 +80,7 @@
             <div class="flex items-center gap-4">
                 <div class="w-2 h-2 rounded-full bg-[#D4A017] animate-pulse"></div>
                 <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase">
-                    &copy; 2026 Panch Tatva — All Systems Operational
+                    &copy; 2026 Panch Tatva — All Rights Reserved 
                 </p>
             </div>
             <div class="flex gap-8">
