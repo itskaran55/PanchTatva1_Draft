@@ -55,6 +55,7 @@ include(__DIR__ . '/../Config/config.php');
             include(__DIR__ . '/../Includes/Home/ourofferings.php'); 
             include(__DIR__ . '/../Includes/Home/roadmap.php'); 
             include(__DIR__ . '/../Includes/Home/portfolio.php'); 
+            include(__DIR__ . '/../Includes/Home/whychooseus.php'); 
             include(__DIR__ . '/../Includes/Home/cta.php'); 
             include(__DIR__ . '/../Includes/Layout/footer.php'); 
         ?>
@@ -133,6 +134,24 @@ include(__DIR__ . '/../Config/config.php');
             el.addEventListener('mouseleave', () => {
                 ring.style.backgroundColor = 'transparent';
                 ring.style.borderColor = 'rgba(212, 160, 23, 0.4)';
+            });
+        });
+
+            // --- SMOOTH ANCHOR SCROLLING VIA LENIS ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+
+                if (target) {
+                    lenis.scrollTo(target, {
+                        offset: -100, // This keeps the section from hiding under your fixed header
+                        duration: 1.5,
+                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                    });
+                }
             });
         });
     </script>

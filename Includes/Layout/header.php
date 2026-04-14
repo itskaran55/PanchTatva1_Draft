@@ -11,7 +11,7 @@
 
         <nav class="hidden lg:flex items-center space-x-12">
             <?php 
-                $navLinks = ['Services', 'Process', 'Our Work', 'Why Us'];
+                $navLinks = ['services', 'process', 'work', 'whyus', 'contact' ];
                 foreach($navLinks as $link): 
             ?>
                 <a href="#<?php echo strtolower(str_replace(' ', '', $link)); ?>" 

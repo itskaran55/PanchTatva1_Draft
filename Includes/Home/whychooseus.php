@@ -1,4 +1,4 @@
-<section id="why          us" class="relative bg-[#1b1e22] py-24 md:py-40 px-6 overflow-hidden">
+<section id="whyus" class="relative bg-[#1b1e22] py-24 md:py-40 px-6 overflow-hidden">
     
     <div class="absolute inset-0 opacity-[0.05] pointer-events-none" 
          style="background-image: linear-gradient(#D4A017 1px, transparent 1px), linear-gradient(90deg, #D4A017 1px, transparent 1px); background-size: 50px 50px;">
