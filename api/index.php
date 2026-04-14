@@ -49,14 +49,14 @@ include(__DIR__ . '/../Config/config.php');
 
     <div class="main">
         <?php 
-            include(__DIR__ . '/../Includes/Layout/Header.php'); 
+            include(__DIR__ . '/../Includes/Layout/header.php'); 
             include(__DIR__ . '/../Includes/Home/hero.php'); 
             include(__DIR__ . '/../Includes/Home/philosophy.php'); 
             include(__DIR__ . '/../Includes/Home/ourofferings.php'); 
             include(__DIR__ . '/../Includes/Home/roadmap.php'); 
             include(__DIR__ . '/../Includes/Home/portfolio.php'); 
             include(__DIR__ . '/../Includes/Home/cta.php'); 
-            include(__DIR__ . '/../Includes/Layout/Footer.php'); 
+            include(__DIR__ . '/../Includes/Layout/footer.php'); 
         ?>
     </div>
 
